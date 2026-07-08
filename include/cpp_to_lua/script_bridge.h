@@ -1,12 +1,12 @@
 #ifndef SCRIPT_BRIDGE_H
 #define SCRIPT_BRIDGE_H
 
-#include <lua.hpp>
+#include <sol/sol.hpp>
 
-//加载Lua脚本，供C++调用
-bool load_lua_callbacks(lua_State* L, const char* path);
-//执行Lua脚本，供C++调用
-bool run_cpp_to_lua_call(lua_State* L);
+#include "lua_to_cpp/game_engine.h"
 
+bool load_lua_callbacks(sol::state_view lua, const char* path);
+bool run_cpp_to_lua_call(sol::state_view lua);
+bool run_phase4_object_callback(sol::state_view lua, GameEngine& player);
 
 #endif // SCRIPT_BRIDGE_H
