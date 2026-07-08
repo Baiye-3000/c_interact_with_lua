@@ -5,6 +5,7 @@ GameEngine GameEngine::create_player(const std::string& name)
     return GameEngine({name, 100, 10});
 }
 
+
 void GameEngine::damage(int amount)
 {
     config_.hp -= amount;

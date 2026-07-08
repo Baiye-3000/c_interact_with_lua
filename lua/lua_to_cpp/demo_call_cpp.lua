@@ -11,6 +11,7 @@ local player = mylib.create_from_config({ name = "Archer", hp = 80, attack = 15 
 print("Created player:", player:to_string())
 
 player:damage(20)
+--传 self → userdata 解出 C++ 对象 → sol2 调成员函数
 print("After damage(20):", player:to_string())
 
 local stats = mylib.get_player_stats(player)
